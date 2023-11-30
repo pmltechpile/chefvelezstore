@@ -16,9 +16,10 @@ const FeaturedProducts = () => {
             Latest products
           </span>
           <p className="text-2xl-regular text-gray-900 max-w-lg mb-4">
-            Our newest styles are here to help you look your best.
+            Explore the latest additions to our featured classes, meticulously
+            crafted to ignite your passion for cooking
           </p>
-          <UnderlineLink href="/store">Explore products</UnderlineLink>
+          <UnderlineLink href="/store">Explore classes</UnderlineLink>
         </div>
         <ul className="grid grid-cols-2 small:grid-cols-4 gap-x-4 gap-y-8">
           {data

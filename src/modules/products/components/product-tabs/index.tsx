@@ -15,27 +15,27 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Product Information",
+        label: "Class Information",
         component: <ProductInfoTab product={product} />,
       },
-      {
-        label: "Shipping & Returns",
-        component: <ShippingInfoTab />,
-      },
+      // {
+      //   label: "Shipping & Returns",
+      //   component: <ShippingInfoTab />,
+      // },
     ]
   }, [product])
 
   return (
     <div>
       <Tab.Group>
-        <Tab.List className="border-b border-gray-200 box-border grid grid-cols-2">
+        <Tab.List className="border-b border-gray-200 box-border grid grid-cols-1">
           {tabs.map((tab, i) => {
             return (
               <Tab
                 key={i}
                 className={({ selected }) =>
                   clsx(
-                    "text-left uppercase text-small-regular pb-2 -mb-px border-b border-gray-200 transition-color duration-150 ease-in-out",
+                    "text-center uppercase text-small-regular pb-2 -mb-px border-b border-gray-200 transition-color duration-150 ease-in-out",
                     {
                       "border-b border-gray-900": selected,
                     }
@@ -63,29 +63,27 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Material</span>
-            <p>{product.material ? product.material : "-"}</p>
+            <span className="font-semibold">Maximum Number of Guests</span>
+            <p>{product.variants[0]?.inventory_quantity ? product.variants[0]?.inventory_quantity : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Country of origin</span>
-            <p>{product.origin_country ? product.origin_country : "-"}</p>
+            <span className="font-semibold">Courses</span>
+            <p>{product.metadata?.courses ? product.metadata?.courses : "-"}</p>
           </div>
           <div>
-            <span className="font-semibold">Type</span>
-            <p>{product.type ? product.type.value : "-"}</p>
+            <span className="font-semibold">Class Duration</span>
+            <p>{product.metadata?.duration ? product.metadata?.duration : "-"}</p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
-          <div>
+          {/* <div>
             <span className="font-semibold">Weight</span>
             <p>{product.weight ? `${product.weight} g` : "-"}</p>
-          </div>
+          </div> */}
           <div>
-            <span className="font-semibold">Dimensions</span>
+            <span className="font-semibold">Perfect For</span>
             <p>
-              {product.length && product.width && product.height
-                ? `${product.length}L x ${product.width}W x ${product.height}H`
-                : "-"}
+              {product.metadata?.for ? product.metadata?.for : "-"}
             </p>
           </div>
         </div>

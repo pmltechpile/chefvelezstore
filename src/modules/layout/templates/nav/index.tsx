@@ -74,7 +74,7 @@ const Nav = () => {
 
           <div className="flex items-center h-full">
             <Link href="/" className="text-xl-semi uppercase">
-              Acme
+              Chef Velez 
             </Link>
           </div>
 
