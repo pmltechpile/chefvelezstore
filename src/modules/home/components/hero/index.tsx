@@ -4,9 +4,9 @@ import Image from "next/image"
 const Hero = () => {
   return (
     <div className="h-[100vh] w-full relative">
-      <div className="text-white absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-end small:items-start small:p-32">
-        <h1 className="text-2xl-semi mb-4 drop-shadow-md shadow-black">
-          Unleash Culinary Creativity with  Cooking Classes
+      <div className="text-black absolute inset-0 z-10 flex flex-col justify-center items-center text-center small:text-left small:justify-start small:items-start small:p-32">
+        <h1 className="text-2xl-semi mb-4 drop-shadow-md shadow-black w-1/2 small:w-1/3">
+          Unleash Your Culinary Creativity with Chef Velez Cooking Classes
         </h1>
         <p className="text-base-regular max-w-[32rem] mb-6 drop-shadow-md shadow-black">
           Embark on a culinary journey like never before with our curated
@@ -17,7 +17,7 @@ const Hero = () => {
         <UnderlineLink href="/store">Explore classes</UnderlineLink>
       </div>
       <Image
-        src="/chefvelez.jpg"
+        src="/HERO3.jpg"
         loading="eager"
         priority={true}
         quality={95}
