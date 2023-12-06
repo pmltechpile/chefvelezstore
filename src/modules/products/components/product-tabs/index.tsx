@@ -72,13 +72,15 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div>
           <div>
             <span className="font-semibold">Courses</span>
-            {/* @ts-ignore */}
-            <p>{product.metadata?.courses ? product.metadata?.courses : "-"}</p>
+            <p>
+              {/* @ts-ignore */}
+              {product.metadata?.courses ? product.metadata?.courses : "-"}
+            </p>
           </div>
           <div>
             <span className="font-semibold">Class Duration</span>
-            {/* @ts-ignore */}
             <p>
+              {/* @ts-ignore */}
               {product.metadata?.duration ? product.metadata?.duration : "-"}
             </p>
           </div>
