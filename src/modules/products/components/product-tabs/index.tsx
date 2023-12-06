@@ -68,11 +68,11 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div>
           <div>
             <span className="font-semibold">Courses</span>
-            <p>{product.metadata?.courses ? product.metadata?.courses : "-"}</p>
+            {/* <p>{product.metadata?.courses ? product.metadata?.courses : "-"}</p> */}
           </div>
           <div>
             <span className="font-semibold">Class Duration</span>
-            <p>{product.metadata?.duration ? product.metadata?.duration : "-"}</p>
+            {/* <p>{product.metadata?.duration ? product.metadata?.duration : "-"}</p> */}
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
@@ -83,7 +83,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           <div>
             <span className="font-semibold">Perfect For</span>
             <p>
-              {product.metadata?.for ? product.metadata?.for : "-"}
+              {/* {product.metadata?.for ? product.metadata?.for : "-"} */}
             </p>
           </div>
         </div>
