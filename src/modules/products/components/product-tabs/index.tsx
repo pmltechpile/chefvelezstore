@@ -64,7 +64,11 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
         <div className="flex flex-col gap-y-4">
           <div>
             <span className="font-semibold">Maximum Number of Guests</span>
-            <p>{product.variants[0]?.inventory_quantity ? product.variants[0]?.inventory_quantity : "-"}</p>
+            <p>
+              {product.variants[0]?.inventory_quantity
+                ? product.variants[0]?.inventory_quantity
+                : "-"}
+            </p>
           </div>
           <div>
             <span className="font-semibold">Courses</span>
@@ -73,7 +77,10 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           </div>
           <div>
             <span className="font-semibold">Class Duration</span>
-            {/* <p>{product.metadata?.duration ? product.metadata?.duration : "-"}</p> */}
+            {/* @ts-ignore */}
+            <p>
+              {product.metadata?.duration ? product.metadata?.duration : "-"}
+            </p>
           </div>
         </div>
         <div className="flex flex-col gap-y-4">
@@ -84,7 +91,8 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
           <div>
             <span className="font-semibold">Perfect For</span>
             <p>
-              {/* {product.metadata?.for ? product.metadata?.for : "-"} */}
+              {/* @ts-ignore */}
+              {product.metadata?.for ? product.metadata?.for : "-"}
             </p>
           </div>
         </div>
