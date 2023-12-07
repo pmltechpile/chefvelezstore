@@ -35,9 +35,9 @@ const PaymentButton: React.FC<PaymentButtonProps> = ({ paymentSession }) => {
       return
     }
 
-    if (cart.shipping_methods.length < 1) {
-      return
-    }
+    // if (cart.shipping_methods.length < 1) {
+    //   return
+    // }
 
     setNotReady(false)
   }, [cart])
