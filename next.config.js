@@ -11,6 +11,10 @@ module.exports = withStoreConfig({
   features: store.features,
   reactStrictMode: true,
   images: {
+    domains: [
+      // ...
+      "chefvelezbucket.s3.us-east-2.amazonaws.com",
+    ],
     remotePatterns: [
       {
         protocol: "http",
