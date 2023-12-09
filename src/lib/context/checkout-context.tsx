@@ -1,6 +1,6 @@
 "use client"
 
-import { medusaClient } from "@lib/config"
+import { medusaClient, MEDUSA_BACKEND_URL } from "@lib/config"
 import useToggleState, { StateType } from "@lib/hooks/use-toggle-state"
 import {
   Address,
@@ -310,11 +310,32 @@ export const CheckoutProvider = ({ children }: CheckoutProviderProps) => {
     })
   }
 
+  const rescueOrderRequest = async () => {
+    const response = await fetch(`${MEDUSA_BACKEND_URL}/store/orders/cart/${cart?.id}`, {
+      method: "GET",
+      credentials: "include", // Include cookies in the request
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+    // Parse the response body as JSON
+    const data = await response.json()
+    if (response.ok) {
+      resetCart()
+      console.log(data)
+      push(`/order/confirmed/${data.order.id}`)
+    }
+  }
+
   /**
    * Method to complete the checkout process. This is called when the user clicks the "Complete Checkout" button.
    */
   const onPaymentCompleted = () => {
     complete(undefined, {
+      onError: async (error) => {
+        console.log(error)
+        await rescueOrderRequest()
+      },
       onSuccess: ({ data }) => {
         resetCart()
         push(`/order/confirmed/${data.id}`)
