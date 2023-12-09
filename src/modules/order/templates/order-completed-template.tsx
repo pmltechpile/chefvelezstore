@@ -41,9 +41,9 @@ const OrderCompletedTemplate: React.FC<OrderCompletedTemplateProps> = ({
             />
             <OrderSummary order={order} />
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-10">
+          {/* <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 p-10">
             <Help />
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
