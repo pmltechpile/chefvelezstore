@@ -19,9 +19,9 @@ const CheckoutForm = () => {
           <Addresses />
         </div>
 
-        {/* <div>
+        <div>
           <Shipping cart={cart} />
-        </div> */}
+        </div>
 
         <div>
           <Payment />

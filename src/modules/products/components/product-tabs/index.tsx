@@ -15,7 +15,7 @@ const ProductTabs = ({ product }: ProductTabsProps) => {
   const tabs = useMemo(() => {
     return [
       {
-        label: "Class Information",
+        label: "Event Information",
         component: <ProductInfoTab product={product} />,
       },
       // {
@@ -63,7 +63,7 @@ const ProductInfoTab = ({ product }: ProductTabsProps) => {
       <div className="grid grid-cols-2 gap-x-8">
         <div className="flex flex-col gap-y-4">
           <div>
-            <span className="font-semibold">Maximum Number of Guests</span>
+            <span className="font-semibold">Remaining Tickets Available</span>
             <p>
               {product.variants[0]?.inventory_quantity
                 ? product.variants[0]?.inventory_quantity
