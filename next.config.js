@@ -11,6 +11,10 @@ module.exports = withStoreConfig({
   features: store.features,
   reactStrictMode: true,
   images: {
+    domains: [
+      //TODO: make this a variable to pull from env vars so we don't break prod when pushing
+      "chefvelezdevbucket.s3.us-east-2.amazonaws.com",
+    ],
     remotePatterns: [
       {
         protocol: "http",
