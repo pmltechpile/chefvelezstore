@@ -12,15 +12,6 @@ type ProductActionsProps = {
   product: PricedProduct
 }
 
-// const hasMenuData = ({ product }:{product:ProductActionsProps}) => {
-//   return !!(
-//     product.metadata?.first ||
-//     product.metadata?.second ||
-//     product.metadata?.third ||
-//     product.metadata?.last
-//   );
-// };
-
 const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
   const { updateOptions, addToCart, options, inStock, variant } =
     useProductActions()
@@ -45,22 +36,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
       )}
       <h3 className="text-xl-regular">{product.title}</h3>
 
-      {/* <p className="text-base-regular">{product.description}</p> */}
-      {product.metadata?.first ? (<>
-        <h1 className="text-base-bold font-serif italic flex items-center justify-center py-2">First Bite</h1>
-        <p className="text-base-regular flex items-center justify-center">{product.metadata?.first}</p>
-        <h1 className="text-base-bold font-serif italic flex items-center justify-center py-2">Second Bite</h1>
-        <p className="text-base-regular flex items-center justify-center">{product.metadata?.second}</p>
-        <h1 className="text-base-bold font-serif italic flex items-center justify-center py-2">Third Bite</h1>
-        <p className="text-base-regular flex items-center justify-center">{product.metadata?.third}</p>
-        <h1 className="text-base-bold font-serif italic flex items-center justify-center py-2">Dessert</h1>
-        <p className="text-base-regular flex items-center justify-center">{product.metadata?.last}</p>
-        
-      </>) : 
-      (<p className="text-base-regular">{product.description}</p>)}
-      
-
-      {/* style the menu here. using metadata? */}
+      <p className="text-base-regular">{product.description}</p>
 
       {product.variants.length > 1 && (
         <div className="my-8 flex flex-col gap-y-6">
