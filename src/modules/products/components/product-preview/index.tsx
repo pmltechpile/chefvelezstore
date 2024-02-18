@@ -14,8 +14,8 @@ const ProductPreview = ({
       <Link href={`/products/${handle}`}>
         <div>
           <Thumbnail thumbnail={thumbnail} size="full" />
-          <div className="p-4 bg-orange-500 text-center"> 
-              <p className="text-lg text-sm font-medium text-white font-bold">Will travel to location</p>
+          <div className="p-2 bg-orange-500 text-center"> 
+              <p className="text-lg font-lg text-white font-">CHEF TRAVELS TO YOU</p>
             </div>
           <div className="p-4 bg-white">
             <h3 className="text-lg font-semibold">{title}</h3>
