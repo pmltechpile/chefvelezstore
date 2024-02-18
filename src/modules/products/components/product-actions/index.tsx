@@ -24,6 +24,21 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
     return variantPrice || cheapestPrice || null
   }, [price])
 
+  const formatDescription = (description: string) => {
+    return description.split('\n').map((paragraph, index) => (
+      <p key={index} style={{ textAlign: 'center' , fontFamily: 'Open Sans', fontSize: '20px' }}>
+        {paragraph}
+      </p>
+    ));
+  };
+
+  const formattedDescription = useMemo(() => {
+    
+    return product.description ? formatDescription(product.description) : null;
+  }, [product.description]);
+
+ 
+
   return (
     <div className="flex flex-col gap-y-2">
       {product.collection && (
@@ -36,7 +51,7 @@ const ProductActions: React.FC<ProductActionsProps> = ({ product }) => {
       )}
       <h3 className="text-xl-regular">{product.title}</h3>
 
-      <p className="text-base-regular">{product.description}</p>
+      <div className="text-base-regular">{formattedDescription}</div>
 
       {product.variants.length > 1 && (
         <div className="my-8 flex flex-col gap-y-6">
