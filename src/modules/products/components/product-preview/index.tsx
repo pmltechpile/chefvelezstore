@@ -10,7 +10,7 @@ const ProductPreview = ({
   price,
 }: ProductPreviewType) => {
   return (
-    <div className="rounded-lg shadow-md overflow-hidden">
+    <div className="rounded-lg shadow-md overflow-hidden h-[520px]">
       <Link href={`/products/${handle}`}>
         <div>
           <Thumbnail thumbnail={thumbnail} size="full" />
